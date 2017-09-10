@@ -34,5 +34,8 @@
         "psr-4": {
             "Acelaya\\Test\\Doctrine\\": "test"
         }
-    }
+    },
+    "bin": [
+        "bin"
+    ]
 }
