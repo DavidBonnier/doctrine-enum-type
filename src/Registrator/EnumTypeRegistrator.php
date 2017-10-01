@@ -43,7 +43,7 @@ EOL;
             'type_files_dir' => sys_get_temp_dir(),
             'auto_generate_type_files' => true,
         ], $config);
-        $this->filesystem = $filesystem ?: new Filesystem();
+        $this->filesystem = $filesystem;
     }
 
     /**
@@ -92,6 +92,7 @@ EOL;
         );
         $path = $this->config['type_files_dir'] . '/' . $typeClass . '.php';
 
+        $this->filesystem = $this->filesystem ?: new Filesystem();
         $this->filesystem->dumpFile($path, $classContents);
     }
 
